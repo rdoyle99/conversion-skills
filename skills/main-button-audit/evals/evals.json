@@ -1,0 +1,29 @@
+{
+  "skill_name": "main-button-audit",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Our hero button says 'Learn more' and goes to /features. Audit it.",
+      "expected_output": "Records text, destination, tap size on a phone, covering elements and tap response, then suggests one fix tied to the site's goal, such as changing the text and destination to the sign-up path.",
+      "assertions": [
+        "Measures or asks for the tap target size on a phone",
+        "Taps and checks for a response",
+        "Gives one fix, not a long list",
+        "Ties the button text to the site's goal"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Users say the 'Book a demo' button on mobile does nothing.",
+      "expected_output": "Reproduces on a fresh phone viewport with up to 3 tries, checks for an overlay or a slow embed, checks console errors from first-party code, and points at the handler's file and line.",
+      "assertions": [
+        "Tests on a fresh phone viewport with repeated tries",
+        "Checks for an overlay or a slow embed before calling it dead",
+        "Looks for first-party console errors",
+        "Points to a file or handler to fix"
+      ],
+      "files": []
+    }
+  ]
+}

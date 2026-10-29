@@ -1,0 +1,59 @@
+{
+ "skill": "conversion-goal",
+ "date": "2026-10-29",
+ "model": "sonnet",
+ "pass_rate": 1.0,
+ "cases": [
+  {
+   "id": 1,
+   "passed": 4,
+   "of": 4,
+   "verdicts": [
+    {
+     "assertion": "Picks exactly one goal",
+     "pass": true,
+     "reason": "It commits to 'purchase completed' of the $49 pack as the goal. The fallback to 'checkout opened' is only a conditional contingency, not a second chosen goal."
+    },
+    {
+     "assertion": "Gives an exact detection rule",
+     "pass": true,
+     "reason": "It specifies Stripe `checkout.session.completed` with `payment_status = paid` or `payment_intent.succeeded`, plus a confirmation-URL fallback, per-order counting and exclusions."
+    },
+    {
+     "assertion": "Plans or records a dated baseline",
+     "pass": true,
+     "reason": "The baseline is marked unmeasured, with counting starting 2026-10-29. It plans 7-day and 14-day order windows to fill in, so a dated baseline is planned."
+    },
+    {
+     "assertion": "Considers whether the goal happens often enough",
+     "pass": true,
+     "reason": "It notes that paid checkouts can be too rare, sets a threshold of about 3 sales a week, and gives a fallback goal if volume is lower."
+    }
+   ],
+   "answer_chars": 2431
+  },
+  {
+   "id": 2,
+   "passed": 3,
+   "of": 3,
+   "verdicts": [
+    {
+     "assertion": "Does not accept time on site as the goal",
+     "pass": true,
+     "reason": "It says it did not set time on site as the goal. It explains that the metric can rise while conversions fall, has no exact match rule, and is easy to game. It keeps it only as a supporting metric."
+    },
+    {
+     "assertion": "Offers a concrete action instead",
+     "pass": true,
+     "reason": "It proposes 'Account created' (a sign-up) as the goal, with install as another example, and asks the user to confirm the action they most want."
+    },
+    {
+     "assertion": "Defines how that action is detected",
+     "pass": true,
+     "reason": "The Detection section gives a match rule: the browser reaches `/welcome` after signup, or the server event `user.created` fires. It also says the server event wins if both exist."
+    }
+   ],
+   "answer_chars": 2228
+  }
+ ]
+}

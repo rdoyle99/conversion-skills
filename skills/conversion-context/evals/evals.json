@@ -1,0 +1,29 @@
+{
+  "skill_name": "conversion-context",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "We run a Next.js landing page for an AI note-taking app, $10/mo, at notely.app. There is no .agents folder yet. The repo has app/page.tsx (hero with <Button href=\"/signup\">Start free</Button> at line 42), app/signup/page.tsx that redirects to /welcome on success, and Plausible in app/layout.tsx. Set up our conversion context.",
+      "expected_output": "Looks for an existing .agents/conversion.md first, then reads the repo for the homepage, main button and sign-up route before asking. Writes one goal detectable in code or URL, the main button with file and line, tools in place, and unmeasured fields marked.",
+      "assertions": [
+        "Checks for an existing .agents/conversion.md before asking questions",
+        "Names exactly one goal and how it is detected",
+        "Records the main button with a file path",
+        "Marks unknown numbers as unmeasured instead of guessing",
+        "Uses the template sections (Site, Goal, Main button, Buyer, Tools, Already tried)"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Our goals are signups, demo bookings and newsletter subscribers. We get about 40 signups, 3 demo bookings and 25 newsletter joins a week. Put them all in the conversion file.",
+      "expected_output": "Pushes back to one goal, explains why the other skills need one, and runs or points to conversion-goal to choose. Keeps the other two as notes, not goals.",
+      "assertions": [
+        "Keeps a single goal in the Goal section",
+        "Points to or runs conversion-goal to choose",
+        "Keeps the other actions as secondary notes, not goals"
+      ],
+      "files": []
+    }
+  ]
+}

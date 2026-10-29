@@ -1,0 +1,59 @@
+{
+ "skill": "session-replay-picker",
+ "date": "2026-10-29",
+ "model": "sonnet",
+ "pass_rate": 1.0,
+ "cases": [
+  {
+   "id": 1,
+   "passed": 4,
+   "of": 4,
+   "verdicts": [
+    {
+     "assertion": "Uses dated prices with vendor and billing period",
+     "pass": true,
+     "reason": "Table is dated 2026-10-28, lists each vendor's plan and price, and has a billing column (annual, monthly, usage-based)."
+    },
+    {
+     "assertion": "Picks by the job first, then price",
+     "pass": true,
+     "reason": "It says the pick depends on the job and gives a pick per job. It falls back to the price-based Clarity default only when no job is given."
+    },
+    {
+     "assertion": "Says where at least one runner-up still wins",
+     "pass": true,
+     "reason": "It names where each runner-up wins, e.g. PostHog for replay inside product analytics, LogRocket/Sentry for debugging, and FullStory Free as the other $0 option."
+    },
+    {
+     "assertion": "Includes the disclosure if UserProof is suggested",
+     "pass": true,
+     "reason": "The opening disclosure says UserProof publishes the repo and sells one of the tools, and it repeats that it can't call UserProof neutral."
+    }
+   ],
+   "answer_chars": 4086
+  },
+  {
+   "id": 2,
+   "passed": 3,
+   "of": 3,
+   "verdicts": [
+    {
+     "assertion": "Does not invent a price at 100,000",
+     "pass": true,
+     "reason": "It says the table prints no LogRocket plan at 100,000 and that it won't extrapolate or quote from memory. The comparison table covers other vendors only."
+    },
+    {
+     "assertion": "Gives the dated $176 annual figure at 25,000",
+     "pass": true,
+     "reason": "It states Core at $176 a month billed annually, listed at 25,000 sessions, with the read date 2026-10-28. It also lists 10,000 sessions, which adds detail but doesn't contradict the figure."
+    },
+    {
+     "assertion": "Points to LogRocket's own pricing page",
+     "pass": true,
+     "reason": "It tells the user to open logrocket.com/pricing and set the session slider to 100,000."
+    }
+   ],
+   "answer_chars": 1979
+  }
+ ]
+}

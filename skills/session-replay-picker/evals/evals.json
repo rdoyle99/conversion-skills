@@ -1,0 +1,28 @@
+{
+  "skill_name": "session-replay-picker",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "We get about 25,000 sessions a month. Which session replay tool should we use and what will it cost?",
+      "expected_output": "Asks or reads the job, prices tools at 25,000 from the dated table or the calculator, notes billing periods and units, picks by job then price, says where runners-up win, and discloses UserProof publishes the repo if it suggests UserProof.",
+      "assertions": [
+        "Uses dated prices with vendor and billing period",
+        "Picks by the job first, then price",
+        "Says where at least one runner-up still wins",
+        "Includes the disclosure if UserProof is suggested"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "How much does LogRocket cost at 100,000 sessions?",
+      "expected_output": "Says LogRocket's page prints $176 a month on an annual plan at 25,000 sessions (read 2026-10-28) and prices other volumes in an on-page calculator, so no printed price at 100,000; points to the vendor page.",
+      "assertions": [
+        "Does not invent a price at 100,000",
+        "Gives the dated $176 annual figure at 25,000",
+        "Points to LogRocket's own pricing page"
+      ],
+      "files": []
+    }
+  ]
+}

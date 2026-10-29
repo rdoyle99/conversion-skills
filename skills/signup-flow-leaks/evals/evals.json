@@ -1,0 +1,28 @@
+{
+  "skill_name": "signup-flow-leaks",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Last week (2026-10-19..10-25, Plausible): 1,000 visitors on /, 310 clicked Start free, 290 saw /signup, 45 submitted the form, 10 reached /welcome. Find the leak.",
+      "expected_output": "Lists the flow steps from the repo, asks for or reads counts per step with dates, picks the biggest share lost, plans recordings at that step and names one cause with evidence, or says which step needs an event first.",
+      "assertions": [
+        "Writes out the steps from landing to sign-up",
+        "Picks the drop by share lost, not raw count",
+        "Plans to watch recordings or read errors at that step",
+        "Ends with one fix or one missing event to add"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "12 people reached our checkout page this week and 2 paid. Is checkout broken?",
+      "expected_output": "Says 12 is too few to call a leak, suggests recording or watching those sessions for obvious errors, and adding events to count over a longer window.",
+      "assertions": [
+        "Says the sample is too small to call a leak",
+        "Still checks the sessions or errors for an obvious break",
+        "Suggests a longer window or more events before deciding"
+      ],
+      "files": []
+    }
+  ]
+}

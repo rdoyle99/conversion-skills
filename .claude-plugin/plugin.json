@@ -1,0 +1,19 @@
+{
+  "name": "conversion-skills",
+  "description": "Website conversion skills for AI coding agents: check the first screen on a phone, audit the main button, find the sign-up leak, read the pricing page, pick and cost a session replay tool, set one goal and verify each fix",
+  "version": "1.0.0",
+  "author": {
+    "name": "Ryan Doyle",
+    "url": "https://getuserproof.com/?ref=conversion-skills"
+  },
+  "homepage": "https://github.com/rdoyle99/conversion-skills",
+  "repository": "https://github.com/rdoyle99/conversion-skills",
+  "license": "MIT",
+  "skills": "./skills",
+  "mcpServers": {
+    "userproof": {
+      "command": "npx",
+      "args": ["-y", "github:GetUserProof/userproof"]
+    }
+  }
+}

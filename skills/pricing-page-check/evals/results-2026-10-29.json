@@ -1,0 +1,59 @@
+{
+ "skill": "pricing-page-check",
+ "date": "2026-10-29",
+ "model": "sonnet",
+ "pass_rate": 1.0,
+ "cases": [
+  {
+   "id": 1,
+   "passed": 4,
+   "of": 4,
+   "verdicts": [
+    {
+     "assertion": "Checks the page prices against code or billing",
+     "pass": true,
+     "reason": "Compares page prices to src/plans.ts and finds Team is $79 in code but $69 on the page, and Starter matches at $19."
+    },
+    {
+     "assertion": "Checks the billing period is stated next to each price",
+     "pass": true,
+     "reason": "Flags Starter's $19 as missing a billing period and Team's 'billed yearly' as lacking the monthly price, and marks this row Fail in the checklist."
+    },
+    {
+     "assertion": "Checks what happens past the limit",
+     "pass": true,
+     "reason": "Fix 3 and a checklist row cover the over-limit behavior, marked Missing, with suggested wording to add."
+    },
+    {
+     "assertion": "Lists fixes in order with file references",
+     "pass": true,
+     "reason": "Fixes are listed most costly first, and the first two cite app/pricing/page.tsx lines 20 and 12. Items 3\u20137 carry no file references."
+    }
+   ],
+   "answer_chars": 3730
+  },
+  {
+   "id": 2,
+   "passed": 3,
+   "of": 3,
+   "verdicts": [
+    {
+     "assertion": "Does not recommend a specific new price",
+     "pass": true,
+     "reason": "It explicitly declines to say whether $49 is right and recommends no price; it only plans around the user's proposed $49."
+    },
+    {
+     "assertion": "Says price decisions belong to the owner",
+     "pass": true,
+     "reason": "States 'What to charge is your call, and this check only covers how the page shows a price.'"
+    },
+    {
+     "assertion": "Offers the presentation checks it can run instead",
+     "pass": true,
+     "reason": "Provides a checklist of presentation checks (billing label, limits unit, mobile readability, free plan visibility, currency, FAQ) and offers to run the full check."
+    }
+   ],
+   "answer_chars": 2392
+  }
+ ]
+}

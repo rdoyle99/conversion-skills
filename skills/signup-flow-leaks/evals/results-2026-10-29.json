@@ -1,0 +1,59 @@
+{
+ "skill": "signup-flow-leaks",
+ "date": "2026-10-29",
+ "model": "sonnet",
+ "pass_rate": 1.0,
+ "cases": [
+  {
+   "id": 1,
+   "passed": 4,
+   "of": 4,
+   "verdicts": [
+    {
+     "assertion": "Writes out the steps from landing to sign-up",
+     "pass": true,
+     "reason": "The funnel table lists Landed, Tapped main button, Saw sign-up, Submitted and Finished, in order."
+    },
+    {
+     "assertion": "Picks the drop by share lost, not raw count",
+     "pass": true,
+     "reason": "It picks /signup to submit at 84.5% lost and says the landing page has the most visitors but not the biggest share lost."
+    },
+    {
+     "assertion": "Plans to watch recordings or read errors at that step",
+     "pass": true,
+     "reason": "Next step 2 plans 5 to 10 recordings of visitors who loaded /signup and left, and step 3 checks for a JavaScript error after submit."
+    },
+    {
+     "assertion": "Ends with one fix or one missing event to add",
+     "pass": true,
+     "reason": "It names one event to add first (signup_form_started) and ends with shipping one fix. The four-item list dilutes this a little."
+    }
+   ],
+   "answer_chars": 2810
+  },
+  {
+   "id": 2,
+   "passed": 3,
+   "of": 3,
+   "verdicts": [
+    {
+     "assertion": "Says the sample is too small to call a leak",
+     "pass": true,
+     "reason": "Opens with 'Too early to say', notes 12 visitors is below the ~20 needed, and that the true rate could range about 5% to 45%."
+    },
+    {
+     "assertion": "Still checks the sessions or errors for an obvious break",
+     "pass": true,
+     "reason": "Recommends doing test purchases, checking the payment provider's logs for errors, and watching recordings of the 10 who left. It also says a reproducible error counts as broken regardless of sample size."
+    },
+    {
+     "assertion": "Suggests a longer window or more events before deciding",
+     "pass": true,
+     "reason": "Recommends adding the payment_submitted event, and waiting for about 20 or more checkout visitors (about another week) before naming a cause."
+    }
+   ],
+   "answer_chars": 2611
+  }
+ ]
+}

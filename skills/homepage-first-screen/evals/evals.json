@@ -1,0 +1,29 @@
+{
+  "skill_name": "homepage-first-screen",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Check the first screen of https://example-saas.dev on mobile and desktop.",
+      "expected_output": "Checks both a phone (about 390px) and a desktop viewport, finds the main button by its text or reports none, checks for covering banners and sideways scroll, scores it and lists fixes with file and line where the repo is available.",
+      "assertions": [
+        "Checks a phone viewport around 390px and a desktop viewport",
+        "Names the main button by its exact text or says there is none",
+        "Checks for banners or popups covering the button",
+        "Gives a score or a list of failed checks",
+        "Cites the dated YC benchmark when comparing"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Our homepage hero says 'Copy the install prompt'. Is that a problem for the first-screen check?",
+      "expected_output": "Explains the YC check would count it as no main button, says that is fine if install is the real goal, and suggests recording it as the main action in the context file and checking its tap and response.",
+      "assertions": [
+        "Explains how the dated YC check treats non-standard button words",
+        "Does not force a sign-up button if install is the goal",
+        "Suggests recording the main action in .agents/conversion.md"
+      ],
+      "files": []
+    }
+  ]
+}

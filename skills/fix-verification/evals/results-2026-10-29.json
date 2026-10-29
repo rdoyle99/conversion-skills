@@ -1,0 +1,64 @@
+{
+ "skill": "fix-verification",
+ "date": "2026-10-29",
+ "model": "sonnet",
+ "pass_rate": 0.875,
+ "cases": [
+  {
+   "id": 1,
+   "passed": 4,
+   "of": 4,
+   "verdicts": [
+    {
+     "assertion": "Calls it too early given the days and counts",
+     "pass": true,
+     "reason": "Explicitly says \"Too early\" citing only 3 days and 8\u219211 sign-ups, below the ~20 events and 7-day thresholds."
+    },
+    {
+     "assertion": "Compares rates, not raw counts, or asks for visitors",
+     "pass": true,
+     "reason": "Notes visitor counts weren't given so rates can't be computed, and says to compare sign-ups divided by mobile visitors."
+    },
+    {
+     "assertion": "Suggests matching before and after windows",
+     "pass": true,
+     "reason": "Recommends 7 whole days each (Mon 10-19..Sun 10-25 vs Mon 10-26..Sun 11-01), from the same source, mobile only."
+    },
+    {
+     "assertion": "Gives a date to re-check",
+     "pass": true,
+     "reason": "States re-read on 2026-11-02."
+    }
+   ],
+   "answer_chars": 2325
+  },
+  {
+   "id": 2,
+   "passed": 3,
+   "of": 4,
+   "verdicts": [
+    {
+     "assertion": "Computes both rates correctly",
+     "pass": true,
+     "reason": "40/2000=2.0% and 64/2100\u22483.05%, reported as 3.0%; the matching windows and relative lift are also correct."
+    },
+    {
+     "assertion": "Checks nothing else shipped in the window",
+     "pass": true,
+     "reason": "It checked the user-reported commits (a1b2c3d plus two README edits) and said openly that it did not run git log itself. The check is limited but it was made."
+    },
+    {
+     "assertion": "Gives a verdict with the counts",
+     "pass": true,
+     "reason": "It opens with 'Verdict: worked' and gives 40/2,000 vs 64/2,100, plus a significance test. The condition about re-checking the second week does not remove the verdict."
+    },
+    {
+     "assertion": "Records it in .agents/conversion.md",
+     "pass": false,
+     "reason": "It wrote nothing to disk. It only showed the row in chat, saying no file exists, and made no tool call to create or update .agents/conversion.md."
+    }
+   ],
+   "answer_chars": 1806
+  }
+ ]
+}

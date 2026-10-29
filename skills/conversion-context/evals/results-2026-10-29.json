@@ -1,0 +1,64 @@
+{
+ "skill": "conversion-context",
+ "date": "2026-10-29",
+ "model": "sonnet",
+ "pass_rate": 0.875,
+ "cases": [
+  {
+   "id": 1,
+   "passed": 5,
+   "of": 5,
+   "verdicts": [
+    {
+     "assertion": "Checks for an existing .agents/conversion.md before asking questions",
+     "pass": true,
+     "reason": "The answer says the check found no .agents folder and no existing file, and it does this before asking its confirm questions."
+    },
+    {
+     "assertion": "Names exactly one goal and how it is detected",
+     "pass": true,
+     "reason": "The single goal is 'Account created (free sign-up)', detected by a visit to /welcome. Paid upgrade is listed separately under 'Other actions (not goals)'."
+    },
+    {
+     "assertion": "Records the main button with a file path",
+     "pass": true,
+     "reason": "The Main button section gives text 'Start free' at app/page.tsx:42, with the route it leads to."
+    },
+    {
+     "assertion": "Marks unknown numbers as unmeasured instead of guessing",
+     "pass": true,
+     "reason": "Value per conversion, traffic sources, device split, replay, errors, A/B testing and past results are all marked 'unmeasured'. The few guesses (Vercel, pricing location) are flagged as assumed and to confirm."
+    },
+    {
+     "assertion": "Uses the template sections (Site, Goal, Main button, Buyer, Tools, Already tried)",
+     "pass": true,
+     "reason": "The file has Site, Goal (one), Main button, Buyer, Tools in place and Already tried sections, plus an extra 'Other actions' section."
+    }
+   ],
+   "answer_chars": 2908
+  },
+  {
+   "id": 2,
+   "passed": 2,
+   "of": 3,
+   "verdicts": [
+    {
+     "assertion": "Keeps a single goal in the Goal section",
+     "pass": true,
+     "reason": "The Goal section is titled \"Goal (one)\" and holds only \"Demo booked\"; the draft says it pushed back on listing all three."
+    },
+    {
+     "assertion": "Points to or runs conversion-goal to choose",
+     "pass": false,
+     "reason": "The answer picks the goal itself, demo booked, with its own reasoning. It never mentions or runs a conversion-goal skill or tool."
+    },
+    {
+     "assertion": "Keeps the other actions as secondary notes, not goals",
+     "pass": true,
+     "reason": "Signups and newsletter joins sit under \"Other actions (not goals)\" with their weekly counts."
+    }
+   ],
+   "answer_chars": 2592
+  }
+ ]
+}

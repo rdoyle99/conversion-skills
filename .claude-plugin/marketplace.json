@@ -1,0 +1,19 @@
+{
+  "name": "conversion-skills",
+  "owner": {
+    "name": "Ryan Doyle",
+    "url": "https://getuserproof.com/?ref=conversion-skills"
+  },
+  "metadata": {
+    "description": "Website conversion skills for AI coding agents, with dated numbers from a 378-site YC homepage check and a daily read of session replay prices",
+    "version": "1.0.0",
+    "repository": "https://github.com/rdoyle99/conversion-skills"
+  },
+  "plugins": [
+    {
+      "name": "conversion-skills",
+      "description": "Conversion skills: shared context, one goal, homepage first screen, main button, dead clicks, sign-up leaks, pricing page, session replay picker, fix verification",
+      "source": "./"
+    }
+  ]
+}

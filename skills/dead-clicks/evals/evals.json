@@ -1,0 +1,28 @@
+{
+  "skill_name": "dead-clicks",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Find dead clicks on our homepage. We don't have session replay.",
+      "expected_output": "Runs or describes a scripted tap test on a phone viewport over up to 3 pages, uses 3 tries in fresh pages before calling a tap dead, sorts each into fix or restyle, and names the top one with a file.",
+      "assertions": [
+        "Uses a phone viewport",
+        "Requires repeated tries before calling a tap dead",
+        "Sorts each into make-it-work or stop-looking-clickable",
+        "Names the top fix with a file or selector"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Hotjar shows lots of rage clicks on our pricing toggle. What now?",
+      "expected_output": "Reproduces the toggle on a phone, checks whether it responds slowly or not at all, looks for an overlay or a handler error, and gives one fix with the file.",
+      "assertions": [
+        "Reproduces the issue before fixing",
+        "Checks for slow response versus no response",
+        "Gives one fix tied to a file or handler"
+      ],
+      "files": []
+    }
+  ]
+}

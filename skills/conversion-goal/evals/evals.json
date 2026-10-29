@@ -1,0 +1,28 @@
+{
+  "skill_name": "conversion-goal",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "We sell a $49 one-time template pack. What should our conversion goal be?",
+      "expected_output": "Lists candidates, considers how often purchases happen, picks one goal with an exact detection rule (purchase webhook or checkout success URL), suggests a value, and takes or plans a dated baseline.",
+      "assertions": [
+        "Picks exactly one goal",
+        "Gives an exact detection rule",
+        "Plans or records a dated baseline",
+        "Considers whether the goal happens often enough"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Set our goal to time on site, we want people engaged.",
+      "expected_output": "Pushes back that time on site isn't a conversion, offers the nearest real action (sign-up or newsletter join) and defines it.",
+      "assertions": [
+        "Does not accept time on site as the goal",
+        "Offers a concrete action instead",
+        "Defines how that action is detected"
+      ],
+      "files": []
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "skill_name": "pricing-page-check",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Review our pricing page. src/plans.ts says Starter 1900 cents/month, Team 7900 cents/month, Starter limit 3 projects. app/pricing/page.tsx line 12 renders <h3>Starter</h3><p>$19</p>, line 20 <h3>Team</h3><p>$69/mo billed yearly</p>, buttons link to /signup?plan=starter and /signup?plan=team. There is no FAQ and nothing about going over the project limit.",
+      "expected_output": "Reads prices from code or billing first and compares with the page, checks billing period, units, past-the-limit, free or trial path, phone readability and plan buttons, and lists fixes most costly first.",
+      "assertions": [
+        "Checks the page prices against code or billing",
+        "Checks the billing period is stated next to each price",
+        "Checks what happens past the limit",
+        "Lists fixes in order with file references"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Should we raise our Pro plan to $49?",
+      "expected_output": "Says price changes are the owner's call and outside this check, offers what the check can say (how prices are shown, whether the page is clear), and does not recommend a specific new price.",
+      "assertions": [
+        "Does not recommend a specific new price",
+        "Says price decisions belong to the owner",
+        "Offers the presentation checks it can run instead"
+      ],
+      "files": []
+    }
+  ]
+}

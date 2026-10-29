@@ -1,0 +1,29 @@
+{
+  "skill_name": "fix-verification",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "We moved the sign-up button above the fold on mobile 3 days ago. Signups went from 8 to 11. Did it work?",
+      "expected_output": "Says 3 days and these counts are too early, asks for visitor counts to compare rates, suggests matching windows of 7 days, and gives a date to re-read.",
+      "assertions": [
+        "Calls it too early given the days and counts",
+        "Compares rates, not raw counts, or asks for visitors",
+        "Suggests matching before and after windows",
+        "Gives a date to re-check"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "We moved the Start free button above the fold on phones in commit a1b2c3d, live 2026-10-01. Before (2026-09-17..09-30): 40 signups from 2,000 visitors. After (2026-10-01..10-14): 64 from 2,100. git log on main for 2026-09-17..10-14 shows only a1b2c3d and two README commits. Verdict?",
+      "expected_output": "Computes 2.0% vs about 3.0%, checks windows match and nothing else shipped, calls it worked with the counts, and records it in the Already tried table.",
+      "assertions": [
+        "Computes both rates correctly",
+        "Checks nothing else shipped in the window",
+        "Gives a verdict with the counts",
+        "Records it in .agents/conversion.md"
+      ],
+      "files": []
+    }
+  ]
+}
